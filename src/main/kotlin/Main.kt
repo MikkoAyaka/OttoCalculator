@@ -3,7 +3,7 @@ package priv.mikkoayaka.ottocalculator
 import kotlin.random.Random
 
 fun main() {
-    println("请输入总人数 n：")
+    println("请输入11111总人数 n：")
     val n = readlnOrNull()?.toIntOrNull() ?: run {
         println("请输入有效的总人数！")
         return
