@@ -9,7 +9,7 @@ fun main() {
         return
     }
 
-    if (n < 1 ||  n < 99) {
+    if (n < 1 ||  n > 99) {
         println("我最多只能服侍99个人哦")
         return
     }
