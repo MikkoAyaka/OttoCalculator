@@ -3,38 +3,43 @@ package priv.mikkoayaka.ottocalculator
 import kotlin.random.Random
 
 fun main() {
-    println("请输入11111总人数 n：")
+    println("主人~今晚总共有多少位客人呢~")
     val n = readlnOrNull()?.toIntOrNull() ?: run {
-        println("请输入有效的总人数！")
+        println("是没听过的数字呢")
         return
     }
 
-    println("请输入第 x 个人的位置 (1 到 $n)：")
+    if (n < 1 ||  n < 99) {
+        println("我最多只能服侍99个人哦")
+        return
+    }
+
+    println("呜呜~请告诉我主人您是第几位呢？")
     val x = readlnOrNull()?.toIntOrNull() ?: run {
-        println("请输入有效的位序！")
+        println("……？")
         return
     }
 
     if (x < 1 || x > n) {
-        println("位序必须在 1 到 $n 之间！")
+        println("您只能排在 1 到 $n 之间哦")
         return
     }
 
-    println("请输入第 $x 个人的点数 v (1 到 99)：")
+    println("最、最后，请主人告诉我您的大小是……")
     val v = readlnOrNull()?.toIntOrNull() ?: run {
-        println("请输入有效的点数！")
+        println("不要说那种奇怪的话啦~")
         return
     }
 
     if (v < 1 || v > 99) {
-        println("点数必须在 1 到 99 之间！")
+        println("嗯~只能在 1 到 99 之间哦")
         return
     }
 
     val simulations = 100000
 
     val probability = calculateProbability(n, x, v, simulations)
-    println("第 $x 个人的点数为 $v 时，他抽中的概率为：${"%.6f".format(probability * 100)}%")
+    println("主、主人的大小为 $v 的时候成功的概率为：${"%.6f".format(probability * 100)}%……害羞到抬不起头了喵~")
 }
 
 fun calculateProbability(totalPlayers: Int, playerPosition: Int, playerScore: Int, trials: Int): Double {
